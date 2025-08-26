@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RV.RA-ICP TP Tickets Partner - Your Ticket to Events</title>
+  <link rel="icon" type="image/png" href="https://via.placeholder.com/32" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="RV.RA-ICP (TP Tickets Partner) - Buy tickets for concerts, theaters, sports, and festivals quickly and securely." />
+  <meta name="keywords" content="RV.RA-ICP (TP Tickets Partner), tickets, events, concerts, theaters, sports, festivals, secure payments" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --neon-blue: #00f0ff;
+      --neon-purple: #d400ff;
+      --dark-bg: #1a1a2e;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .button {
+      background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+      color: white;
+      font-weight: 600;
+      border-radius: 9999px;
+      transition: all 0.2s ease-in-out;
+      min-width: 120px;
+      touch-action: manipulation;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease-in-out;
+    }
+
+    .button:hover::after {
+      left: 100%;
+    }
+
+    .button:hover {
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+      transform: scale(1.05);
+    }
+
+    @media (min-width: 640px) {
+      .button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .button {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+      }
+    }
+
+    .card {
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 240, 255, 0.4);
+    }
+
+    .footer-link {
+      color: #9ca3af;
+      transition: color 0.2s ease;
+      font-size: 0.875rem;
+    }
+
+    .footer-link:hover {
+      color: var(--neon-blue);
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.875rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      .card { padding: 1rem; }
+      .button { padding: 0.5rem 1rem; font-size: 0.875rem; }
+      .footer-link { font-size: 0.875rem; }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      h1 { font-size: 2.25rem; }
+      h2 { font-size: 1.875rem; }
+      h3 { font-size: 1.5rem; }
+      .card { padding: 1.5rem; }
+      .button { padding: 0.75rem 1.5rem; font-size: 1rem; }
+    }
+
+    @media (min-width: 1025px) {
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.25rem; }
+      h3 { font-size: 1.5rem; }
+      .card { padding: 2rem; }
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @keyframes gradient-x {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 400% 50%; }
+    }
+
+    .animate-gradient-x {
+      background-size: 400%;
+      animation: gradient-x 10s linear infinite;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .scale-in {
+      animation: scaleIn 0.4s ease-out forwards;
+    }
+
+    .modal {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-icon {
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: var(--neon-purple);
+      color: white;
+      border-radius: 50%;
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .cart-icon:hover .cart-badge {
+      transform: scale(1.2);
+    }
+
+    .input-focus {
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .input-focus:focus {
+      border-color: var(--neon-blue);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    }
+
+    .lazy-img {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .lazy-img.loaded {
+      opacity: 1;
+    }
+
+    .category-button {
+      background: transparent;
+      border: 1px solid var(--neon-blue);
+      color: var(--neon-blue);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .category-button:hover {
+      background: var(--neon-blue);
+      color: white;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+
+    .category-button.active {
+      background: var(--neon-blue);
+      color: white;
+    }
+
+    .collapsible {
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      overflow: hidden;
+    }
+
+    .collapsible:not(.open) {
+      max-height: 0;
+      opacity: 0;
+    }
+
+    .collapsible.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .autocomplete-suggestions {
+      position: absolute;
+      background: #1a1a2e;
+      border: 1px solid var(--neon-blue);
+      border-radius: 0.5rem;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 10;
+      width: 100%;
+    }
+
+    .suggestion-item {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .suggestion-item:hover {
+      background: var(--neon-blue);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode.react@3.1.0/lib/qrcode.min.js"></script>
+  <script>
+    const { createElement, useState, useEffect, useCallback, useMemo } = React;
+
+    // Icons
+    const CalendarIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V8h14v12z' }) });
+    const ShieldCheckIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M12 2L2 7v7c0 5.5 4.5 10 10 10s10-4.5 10-10V7l-10-5zm-1 13.6l-3.5-3.5 1.4-1.4L11 12.2l4.1-4.1 1.4 1.4-5.5 5.5z' }) });
+    const CurrencyDollarIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm0-4h-2V9h2v6z' }) });
+    const MapPinIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z' }) });
+    const ShoppingCartIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM17 18c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-8.1-5l1.4-7H5V4h1.6l.7 2h12.1c.7 0 1.3.5 1.4 1.2l1.5 7.1c.1.5-.3 1-.9 1H8.9c-.6 0-1-.5-.9-1z' }) });
+    const UserIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' }) });
+    const WalletIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M21 7h-3V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-1h3c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-5 10H8V6h8v1h-3v10h3zm5-2h-3V9h3v6z' }) });
+    const TicketIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c1.1 0 2 .9 2 2s-.9 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-2 2c0 1.1-.9 2-2 2v4H6v-4c-1.1 0-2-.9-2-2s.9-2 2-2V6h12v4c1.1 0 2 .9 2 2zM8 8h8v2H8V8zm0 6h8v2H8v-2z' }) });
+    const ShareIcon = (props) => createElement('svg', { className: props.className, fill: 'currentColor', viewBox: '0 0 24 24', children: createElement('path', { d: 'M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z' }) });
+
+    // Event Data
+    const events = [
+      { id: '1', title: 'N Crypto Awards 2025', date: '2025-10-12', time: '12:00', city: 'Kyiv', category: 'Comedy', priceRange: '1800-15000 UAH', image: 'https://d2q8nf5aywi2aj.cloudfront.net/uploads/resize/shows/logo/630x891_1751027556.webp', url: '/#/event/1', venue: 'Parkova road, 16a, Kiev, 03150', description: 'N Crypto Awards 2025 is the main final event of the year in the world of cryptocurrency and Web3 in Ukraine! The conference will bring together the best representatives of the industry to sum up the year, recognize leaders and set new trends for the future. The event will bring together leading companies, top speakers, exchanges, bloggers and over 2,500 guests who will share insights and experience.' },
+      { id: '2', title: 'E-Commerce Conference 2025', date: '2025-10-13', time: '12:00', city: 'Kyiv', category: 'Theater', priceRange: '1500-5500 UAH', image: 'https://d2q8nf5aywi2aj.cloudfront.net/uploads/resize/shows/logo/630x891_1755874606.webp', url: '/#/event/2', venue: 'Parkova road, 16a, Kiev, 03150', description: 'E-commerce Conference 2025 is the largest professional event in Ukraine dedicated to all areas of e-commerce.Over 2,000 participants - from entrepreneurs, online business owners and marketers to representatives of marketplaces, logistics services, financial platforms, digital agencies and e-com solution providers.' },
+      { id: '3', title: 'MUSIC BOX    FEST', date: '2025-06-21', time: '12:00', city: 'Kyiv', category: 'Concert', priceRange: '400 UAH', image: 'https://images.karabas.com/external/018e50bb-71e5-7428-9b44-4f503fcfd169/events/01968fb9-7033-7bda-b177-10c68a8492b0/2565465959_ImageBig638853480874554690_700_1000.webp?v=1', url: '/#/event/3', venue: 'st. Glushkova, 9', description: 'The largest music festival in the capital will bring together 20 stars of the Ukrainian scene - from legends to new wave. Hosts: Dasha Kvitkova, Timur Miroshnichenko, Mila Yeremeyeva and Yura Tkach.But the most important thing is that 100% of the ticket price will go to charity.All funds will be directed to the construction of a bone marrow transplantation unit for children in Dnipro. .' },
+      { id: '4', title: 'Kyiv Concert', date: '2025-11-09', time: '19:00', city: 'Kyiv', category: 'Concert', priceRange: '850-27600 UAH', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=300&h=150', url: '/#/event/4', venue: 'Palace of Sports', description: 'A grand concert with international artists.' },
+      { id: '5', title: 'Kyiv Theater Show', date: '2025-09-24', time: '19:00', city: 'Kyiv', category: 'Theater', priceRange: '600-2500 UAH', image: 'https://renty.ua/wp-content/uploads/2019/05/49-cover_big.jpg', url: '/#/event/5', venue: 'National Theater', description: 'A classic play with modern twists.' },
+    ];
+
+    // Navigation Component
+    const Navbar = ({ user, setUser, cart, setPage, tickets }) => {
+      const cartItemCount = useMemo(() => cart.reduce((sum, item) => sum + item.quantity, 0), [cart]);
+      const ticketCount = useMemo(() => tickets.length, [tickets]);
+
+      return createElement(
+        'nav',
+        { className: 'bg-gray-900/90 backdrop-blur-lg py-4 px-4 sm:px-6 md:px-8 sticky top-0 z-50 transition-all duration-300' },
+        createElement(
+          'div',
+          { className: 'max-w-7xl mx-auto flex justify-between items-center' },
+          [
+            createElement(
+              'a',
+              { href: '#/', onClick: () => setPage('/'), className: 'text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] hover:scale-105 transition-transform' },
+              'RV.RA-ICP'
+            ),
+            createElement(
+              'div',
+              { className: 'flex items-center gap-4 sm:gap-6' },
+              [
+                createElement(
+                  'a',
+                  { href: '#/', onClick: () => setPage('/'), className: 'footer-link hover:scale-105 transition-transform' },
+                  'Home'
+                ),
+                createElement(
+                  'a',
+                  { href: '#/events', onClick: () => setPage('/events'), className: 'footer-link hover:scale-105 transition-transform' },
+                  'Events'
+                ),
+                createElement(
+                  'a',
+                  { href: '#/about', onClick: () => setPage('/about'), className: 'footer-link hover:scale-105 transition-transform' },
+                  'About Us'
+                ),
+                createElement(
+                  'a',
+                  { href: '#/payment-methods', onClick: () => setPage('/payment-methods'), className: 'footer-link hover:scale-105 transition-transform' },
+                  'Payment Methods'
+                ),
+                user && createElement(
+                  'a',
+                  { href: '#/account', onClick: () => setPage('/account'), className: 'footer-link flex items-center gap-2 hover:scale-105 transition-transform' },
+                  [
+                    createElement(TicketIcon, { className: 'w-5 h-5' }),
+                    'My Account',
+                    ticketCount > 0 && createElement('span', { className: 'cart-badge' }, ticketCount),
+                  ]
+                ),
+                user ? (
+                  createElement(
+                    'div',
+                    { className: 'flex items-center gap-3' },
+                    [
+                      createElement('span', { className: 'text-gray-300 font-medium' }, user.name),
+                      createElement(
+                        'button',
+                        { onClick: () => setUser(null), className: 'footer-link hover:scale-105 transition-transform' },
+                        'Logout'
+                      ),
+                    ]
+                  )
+                ) : (
+                  createElement(
+                    'a',
+                    { href: '#/login', onClick: () => setPage('/login'), className: 'footer-link flex items-center gap-2 hover:scale-105 transition-transform' },
+                    [
+                      createElement(UserIcon, { className: 'w-5 h-5' }),
+                      'Login'
+                    ]
+                  )
+                ),
+                createElement(
+                  'a',
+                  { href: '#/cart', onClick: () => user ? setPage('/cart') : setPage('/login'), className: 'cart-icon footer-link flex items-center gap-2 hover:scale-105 transition-transform' },
+                  [
+                    createElement(ShoppingCartIcon, { className: 'w-5 h-5' }),
+                    'Cart',
+                    cartItemCount > 0 && createElement('span', { className: 'cart-badge' }, cartItemCount),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        )
+      );
+    };
+
+    // Hero Section (Enhanced)
+    const Hero = ({ user, setCart, setPage, setShowAuthModal, setTickets }) => {
+      const [filterCategory, setFilterCategory] = useState('All');
+      const [searchQuery, setSearchQuery] = useState('');
+      const [suggestions, setSuggestions] = useState([]);
+      const categories = ['All', 'Concert', 'Theater', 'Comedy', 'Festival', 'Conference', 'Exhibition'];
+      const featuredEvents = useMemo(() => events.filter(event => ['1', '2', '3'].includes(event.id)), []);
+
+      useEffect(() => {
+        document.querySelectorAll('.lazy-img').forEach(img => {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          observer.observe(img);
+        });
+      }, []);
+
+      useEffect(() => {
+        if (searchQuery) {
+          const filteredSuggestions = events
+            .filter(event => 
+              event.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+              event.city.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .map(event => event.title);
+          setSuggestions(filteredSuggestions.slice(0, 5));
+        } else {
+          setSuggestions([]);
+        }
+      }, [searchQuery]);
+
+      const handleAddToCart = useCallback((event) => {
+        if (!user) {
+          setShowAuthModal(true);
+        } else {
+          setCart(prev => {
+            const existingItem = prev.find(item => item.id === event.id);
+            if (existingItem) {
+              return prev.map(item =>
+                item.id === event.id ? { ...item, quantity: item.quantity + 1 } : item
+              );
+            }
+            return [...prev, { id: event.id, title: event.title, price: event.priceRange.includes('-') ? parseInt(event.priceRange.split('-')[0]) : 0, quantity: 1 }];
+          });
+        }
+      }, [user, setCart, setShowAuthModal]);
+
+      const handleBuyNow = useCallback((event) => {
+        if (!user) {
+          setShowAuthModal(true);
+        } else {
+          setTickets(prev => [
+            ...prev,
+            {
+              id: `${event.id}-${Date.now()}`,
+              eventId: event.id,
+              title: event.title,
+              date: event.date,
+              time: event.time,
+              city: event.city,
+              venue: event.venue,
+              category: event.category,
+              price: event.priceRange.includes('-') ? parseInt(event.priceRange.split('-')[0]) : 0,
+              qrCode: `ticket-${event.id}-${Date.now()}`,
+            }
+          ]);
+          alert(`Ticket for ${event.title} purchased successfully! Check My Account for details or your Telegram (@TP_TicketsPartner_bot) for the QR code.`);
+        }
+      }, [user, setTickets, setShowAuthModal]);
+
+      return createElement(
+        'div',
+        { className: 'space-y-12' },
+        [
+          // Promotional Banner
+          createElement(
+            'section',
+            { className: 'bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] py-4 px-4 sm:px-6 md:px-8 text-center' },
+            createElement(
+              'div',
+              { className: 'max-w-7xl mx-auto' },
+              [
+                createElement('p', { className: 'text-lg sm:text-xl font-semibold text-white mb-2' }, 'Limited Time Offer: Get 10% off your first ticket!'),
+                createElement(
+                  'a',
+                  { href: '#/events', onClick: () => setPage('/events'), className: 'button inline-block' },
+                  'Shop Now'
+                ),
+              ]
+            )
+          ),
+          // Hero Section
+          createElement(
+            'section',
+            { className: 'relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-[rgba(0,240,255,0.2)] to-[rgba(212,0,255,0.2)] animate-gradient-x' },
+            [
+              createElement('video', {
+                src: 'https://assets.mixkit.co/videos/preview/mixkit-concert-light-show-6897-large.mp4',
+                autoPlay: true,
+                loop: true,
+                muted: true,
+                className: 'absolute w-full h-full object-cover opacity-30 hero-video lazy-img',
+              }),
+              createElement('div', { className: 'absolute inset-0 bg-black/50 transition-opacity duration-300' }),
+              createElement(
+                'div',
+                { className: 'relative z-10 text-center px-4 sm:px-6 md:px-8' },
+                createElement(
+                  'div',
+                  { className: 'fade-in-up' },
+                  [
+                    createElement('img', {
+                      src: 'https://i.ibb.co/LXjmYR6J/image-4.png',
+                      alt: 'RV.RA-ICP Logo',
+                      className: 'w-32 sm:w-40 md:w-48 mx-auto mb-4 sm:mb-6 animate-pulse lazy-img',
+                    }),
+                    createElement(
+                      'h1',
+                      { className: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)]' },
+                      'RV.RA-ICP (TP Tickets Partner) — Discover Unforgettable Events'
+                    ),
+                    createElement(
+                      'p',
+                      { className: 'text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 md:mb-10 max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto font-light' },
+                      'Explore concerts, theaters, and festivals in Kyiv and beyond. Secure tickets with ease!'
+                    ),
+                    createElement(
+                      'div',
+                      { className: 'relative flex flex-col sm:flex-row gap-4 items-center justify-center mb-8' },
+                      [
+                        createElement(
+                          'div',
+                          { className: 'relative w-full sm:w-1/2' },
+                          [
+                            createElement(
+                              'input',
+                              {
+                                type: 'text',
+                                placeholder: 'Search events...',
+                                className: 'bg-gray-800 text-white p-3 rounded-lg input-focus w-full',
+                                value: searchQuery,
+                                onChange: (e) => setSearchQuery(e.target.value),
+                              }
+                            ),
+                            suggestions.length > 0 && createElement(
+                              'div',
+                              { className: 'autocomplete-suggestions mt-1' },
+                              suggestions.map(suggestion => createElement(
+                                'div',
+                                {
+                                  key: suggestion,
+                                  className: 'suggestion-item',
+                                  onClick: () => setSearchQuery(suggestion),
+                                },
+                                suggestion
+                              ))
+                            ),
+                          ]
+                        ),
+                        createElement(
+                          'a',
+                          { href: '#/events', onClick: () => setPage('/events'), className: 'button inline-block hover:scale-110 transition-all' },
+                          'Browse Events'
+                        ),
+                      ]
+                    ),
+                    createElement(
+                      'div',
+                      { className: 'flex flex-wrap gap-2 justify-center' },
+                      categories.map(category => createElement(
+                        'button',
+                        {
+                          className: `category-button ${filterCategory === category ? 'active' : ''}`,
+                          onClick: () => setFilterCategory(category),
+                        },
+                        category
+                      ))
+                    ),
+                  ]
+                )
+              ),
+            ]
+          ),
+          // Top Categories Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+            [
+              createElement(
+                'h2',
+                { className: 'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up' },
+                'Top Categories'
+              ),
+              createElement(
+                'div',
+                { className: 'max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4' },
+                categories.slice(1).map(category => createElement(
+                  'button',
+                  {
+                    key: category,
+                    className: 'card bg-gray-800/40 p-4 rounded-lg border border-[rgba(0,240,255,0.2)] hover:border-[var(--neon-blue)] transition-all fade-in-up',
+                    onClick: () => { setFilterCategory(category); setPage('/events'); },
+                  },
+                  category
+                ))
+              ),
+            ]
+          ),
+          // Featured Events Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+            [
+              createElement(
+                'h2',
+                { className: 'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up' },
+                'Featured Events'
+              ),
+              createElement(
+                'div',
+                { className: 'max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' },
+                featuredEvents.filter(event => filterCategory === 'All' || event.category === filterCategory)
+                  .filter(event => !searchQuery || event.title.toLowerCase().includes(searchQuery.toLowerCase()) || event.city.toLowerCase().includes(searchQuery.toLowerCase()))
+                  .map(event => createElement(
+                    'div',
+                    { key: event.id, className: 'card overflow-hidden border-[1.5px] border-[rgba(0,240,255,0.3)] hover:border-[rgba(212,0,255,0.4)] hover:shadow-lg transition-all fade-in-up' },
+                    [
+                      createElement(
+                        'div',
+                        { className: 'relative' },
+                        [
+                          createElement('img', { src: event.image, alt: event.title, className: 'w-full h-48 sm:h-56 md:h-64 object-cover rounded-t-xl lazy-img', loading: 'lazy' }),
+                          createElement('div', { className: 'absolute inset-0 bg-gradient-to-t from-[rgba(17,17,17,0.9)] to-transparent transition-opacity duration-300' }),
+                        ]
+                      ),
+                      createElement(
+                        'div',
+                        { className: 'p-4 sm:p-6' },
+                        [
+                          createElement('h3', { className: 'text-lg sm:text-xl md:text-2xl font-semibold text-[var(--neon-blue)] mb-2 line-clamp-2' }, event.title),
+                          createElement('p', { className: 'text-gray-300 flex items-center mb-1 text-sm sm:text-base' }, [
+                            createElement(CalendarIcon, { className: 'w-4 sm:w-5 h-4 sm:h-5 mr-2 text-[var(--neon-purple)]' }),
+                            `Date: ${event.date} ${event.time}`,
+                          ]),
+                          createElement('p', { className: 'text-gray-300 flex items-center mb-1 text-sm sm:text-base' }, [
+                            createElement(MapPinIcon, { className: 'w-4 sm:w-5 h-4 sm:h-5 mr-2 text-[var(--neon-purple)]' }),
+                            `City: ${event.city}`,
+                          ]),
+                          createElement('p', { className: 'text-gray-300 flex items-center mb-3 sm:mb-4 text-sm sm:text-base' }, [
+                            createElement(CurrencyDollarIcon, { className: 'w-4 sm:w-5 h-4 sm:h-5 mr-2 text-[var(--neon-purple)]' }),
+                            `Price: ${event.priceRange}`,
+                          ]),
+                          createElement(
+                            'div',
+                            { className: 'flex gap-2 flex-wrap' },
+                            [
+                              createElement(
+                                'a',
+                                { href: `#/event/${event.id}`, onClick: () => setPage(`/event/${event.id}`), className: 'button flex-1 text-center text-sm sm:text-base' },
+                                'View Details'
+                              ),
+                              createElement(
+                                'button',
+                                { className: 'button flex-1 text-center text-sm sm:text-base', onClick: () => handleAddToCart(event) },
+                                'Add to Cart'
+                              ),
+                              createElement(
+                                'button',
+                                { className: 'button flex-1 text-center text-sm sm:text-base', onClick: () => handleBuyNow(event) },
+                                'Buy Now'
+                              ),
+                            ]
+                          ),
+                        ]
+                      ),
+                    ]
+                  ))
+              ),
+            ]
+          ),
+          // Testimonials Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/20' },
+            [
+              createElement(
+                'h2',
+                { className: 'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up' },
+                'What Our Users Say'
+              ),
+              createElement(
+                'div',
+                { className: 'max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' },
+                [
+                  createElement(
+                    'div',
+                    { className: 'card bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)] fade-in-up' },
+                    [
+                      createElement('p', { className: 'text-gray-300 mb-4' }, '"Amazing experience! Easy to use and secure ticket purchasing."'),
+                      createElement('p', { className: 'text-[var(--neon-blue)] font-semibold' }, '— Anna K.')
+                    ]
+                  ),
+                  createElement(
+                    'div',
+                    { className: 'card bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)] fade-in-up' },
+                    [
+                      createElement('p', { className: 'text-gray-300 mb-4' }, '"Found the best concerts in Kyiv with RV.RA-ICP!"'),
+                      createElement('p', { className: 'text-[var(--neon-blue)] font-semibold' }, '— Dmytro P.')
+                    ]
+                  ),
+                  createElement(
+                    'div',
+                    { className: 'card bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)] fade-in-up' },
+                    [
+                      createElement('p', { className: 'text-gray-300 mb-4' }, '"Quick and reliable service. Love the QR code tickets!"'),
+                      createElement('p', { className: 'text-[var(--neon-blue)] font-semibold' }, '— Olena S.')
+                    ]
+                  ),
+                ]
+              ),
+            ]
+          ),
+        ]
+      );
+    };
+
+    // Event Details Component
+    const EventDetails = ({ eventId, user, setCart, setShowAuthModal, setTickets, setPage }) => {
+      const event = events.find(e => e.id === eventId);
+      if (!event) {
+        return createElement('p', { className: 'text-gray-300 text-center py-12' }, 'Event not found.');
+      }
+
+      const handleAddToCart = useCallback(() => {
+        if (!user) {
+          setShowAuthModal(true);
+        } else {
+          setCart(prev => {
+            const existingItem = prev.find(item => item.id === event.id);
+            if (existingItem) {
+              return prev.map(item =>
+                item.id === event.id ? { ...item, quantity: item.quantity + 1 } : item
+              );
+            }
+            return [...prev, { id: event.id, title: event.title, price: event.priceRange.includes('-') ? parseInt(event.priceRange.split('-')[0]) : 0, quantity: 1 }];
+          });
+        }
+      }, [user, setCart, setShowAuthModal]);
+
+      const handleBuyNow = useCallback(() => {
+        if (!user) {
+          setShowAuthModal(true);
+        } else {
+          setTickets(prev => [
+            ...prev,
+            {
+              id: `${event.id}-${Date.now()}`,
+              eventId: event.id,
+              title: event.title,
+              date: event.date,
+              time: event.time,
+              city: event.city,
+              venue: event.venue,
+              category: event.category,
+              price: event.priceRange.includes('-') ? parseInt(event.priceRange.split('-')[0]) : 0,
+              qrCode: `ticket-${event.id}-${Date.now()}`,
+            }
+          ]);
+          alert(`Ticket for ${event.title} purchased successfully! Check My Account for details or your Telegram (@TP_TicketsPartner_bot) for the QR code.`);
+        }
+      }, [user, setTickets, setShowAuthModal]);
+
+      const handleShare = useCallback(() => {
+        const shareUrl = `${window.location.origin}/#/event/${event.id}`;
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          alert('Event link copied to clipboard!');
+        });
+      }, [event.id]);
+
+      return createElement(
+        'section',
+        { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+        createElement(
+          'div',
+          { className: 'max-w-4xl mx-auto scale-in' },
+          [
+            createElement('h2', { className: 'text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--neon-blue)]' }, event.title),
+            createElement(
+              'div',
+              { className: 'card bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)]' },
+              [
+                createElement('img', { src: event.image, alt: event.title, className: 'w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg mb-4 lazy-img', loading: 'lazy' }),
+                createElement('p', { className: 'text-gray-300 mb-4' }, event.description),
+                createElement('p', { className: 'text-gray-300 flex items-center mb-2' }, [
+                  createElement(CalendarIcon, { className: 'w-5 h-5 mr-2 text-[var(--neon-purple)]' }),
+                  `Date: ${event.date} ${event.time}`,
+                ]),
+                createElement('p', { className: 'text-gray-300 flex items-center mb-2' }, [
+                  createElement(MapPinIcon, { className: 'w-5 h-5 mr-2 text-[var(--neon-purple)]' }),
+                  `City: ${event.city}`,
+                ]),
+                createElement('p', { className: 'text-gray-300 flex items-center mb-2' }, [
+                  createElement(MapPinIcon, { className: 'w-5 h-5 mr-2 text-[var(--neon-purple)]' }),
+                  `Venue: ${event.venue}`,
+                ]),
+                createElement('p', { className: 'text-gray-300 flex items-center mb-2' }, [
+                  createElement(TicketIcon, { className: 'w-5 h-5 mr-2 text-[var(--neon-purple)]' }),
+                  `Category: ${event.category}`,
+                ]),
+                createElement('p', { className: 'text-gray-300 flex items-center mb-4' }, [
+                  createElement(CurrencyDollarIcon, { className: 'w-5 h-5 mr-2 text-[var(--neon-purple)]' }),
+                  `Price: ${event.priceRange}`,
+                ]),
+                createElement(
+                  'div',
+                  { className: 'flex gap-2 flex-wrap' },
+                  [
+                    createElement(
+                      'button',
+                      { className: 'button flex-1 text-center', onClick: handleAddToCart },
+                      'Add to Cart'
+                    ),
+                    createElement(
+                      'button',
+                      { className: 'button flex-1 text-center', onClick: handleBuyNow },
+                      'Buy Now'
+                    ),
+                    createElement(
+                      'button',
+                      { className: 'button flex-1 text-center flex items-center justify-center gap-2', onClick: handleShare },
+                      [
+                        createElement(ShareIcon, { className: 'w-5 h-5' }),
+                        'Share',
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'a',
+              { href: '#/events', onClick: () => setPage('/events'), className: 'button inline-block mt-4' },
+              'Back to Events'
+            ),
+          ]
+        )
+      );
+    };
+
+    // Events Section
+    const Events = ({ cart, setCart, user, setShowAuthModal, setTickets }) => {
+      const [filterCategory, setFilterCategory] = useState('All');
+      const [filterDate, setFilterDate] = useState('');
+      const [searchQuery, setSearchQuery] = useState('');
+      const categories = ['All', 'Concert', 'Theater', 'Comedy', 'Festival', 'Conference', 'Exhibition'];
+
+      const filteredEvents = useMemo(() => events.filter(event => 
+        (filterCategory === 'All' || event.category === filterCategory) &&
+        (!filterDate || event.date === filterDate) &&
+        (!searchQuery || event.title.toLowerCase().includes(searchQuery.toLowerCase()) || event.city.toLowerCase().includes(searchQuery.toLowerCase()))
+      ), [filterCategory, filterDate, searchQuery]);
+
+      useEffect(() => {
+        document.querySelectorAll('.lazy-img').forEach(img => {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          observer.observe(img);
+        });
+      }, []);
+
+      const handleAddToCart = useCallback((event) => {
+        if (!user) {
+          setShowAuthModal(true);
+        } else {
+          setCart(prev => {
+            const existingItem = prev.find(item => item.id === event.id);
+            if (existingItem) {
+              return prev.map(item =>
+                item.id === event.id ? { ...item, quantity: item.quantity + 1 } : item
+              );
+            }
+            return [...prev, { id: event.id, title: event.title, price: event.priceRange.includes('-') ? parseInt(event.priceRange.split('-')[0]) : 0, quantity: 1 }];
+          });
+        }
+      }, [user, setCart, setShowAuthModal]);
+
+      const handleBuyNow = useCallback((event) => {
+        if (!user) {
+          setShowAuthModal(true);
+        } else {
+          setTickets(prev => [
+            ...prev,
+            {
+              id: `${event.id}-${Date.now()}`,
+              eventId: event.id,
+              title: event.title,
+              date: event.date,
+              time: event.time,
+              city: event.city,
+              venue: event.venue,
+              category: event.category,
+              price: event.priceRange.includes('-') ? parseInt(event.priceRange.split('-')[0]) : 0,
+              qrCode: `ticket-${event.id}-${Date.now()}`,
+            }
+          ]);
+          alert(`Ticket for ${event.title} purchased successfully! Check My Account for details or your Telegram (@TP_TicketsPartner_bot) for the QR code.`);
+        }
+      }, [user, setTickets, setShowAuthModal]);
+
+      const handleShare = useCallback((eventId) => {
+        const shareUrl = `${window.location.origin}/#/event/${eventId}`;
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          alert('Event link copied to clipboard!');
+        });
+      }, []);
+
+      return createElement(
+        'section',
+        { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+        [
+          createElement(
+            'h2',
+            { className: 'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up' },
+            'Upcoming Events'
+          ),
+          createElement(
+            'div',
+            { className: 'max-w-6xl mx-auto mb-8 flex flex-col sm:flex-row gap-4 items-center' },
+            [
+              createElement(
+                'input',
+                {
+                  type: 'text',
+                  placeholder: 'Search by title or city...',
+                  className: 'bg-gray-800 text-white p-3 rounded-lg input-focus w-full sm:w-1/3',
+                  value: searchQuery,
+                  onChange: (e) => setSearchQuery(e.target.value),
+                }
+              ),
+              createElement(
+                'select',
+                {
+                  className: 'bg-gray-800 text-white p-3 rounded-lg input-focus w-full sm:w-auto',
+                  value: filterCategory,
+                  onChange: (e) => setFilterCategory(e.target.value),
+                },
+                categories.map(category => createElement('option', { value: category }, category))
+              ),
+              createElement(
+                'input',
+                {
+                  type: 'date',
+                  className: 'bg-gray-800 text-white p-3 rounded-lg input-focus w-full sm:w-auto',
+                  value: filterDate,
+                  onChange: (e) => setFilterDate(e.target.value),
+                }
+              ),
+            ]
+          ),
+          filteredEvents.length === 0 ? (
+            createElement('p', { className: 'text-gray-300 text-center' }, 'No events found.')
+          ) : (
+            createElement(
+              'div',
+              { className: 'max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' },
+              filteredEvents.map(event => createElement(
+                'div',
+                { key: event.id, className: 'card overflow-hidden border-[1.5px] border-[rgba(0,240,255,0.3)] hover:border-[rgba(212,0,255,0.4)] hover:shadow-lg transition-all fade-in-up' },
+                [
+                  createElement(
+                    'div',
+                    { className: 'relative' },
+                    [
+                      createElement('img', { src: event.image, alt: event.title, className: 'w-full h-48 sm:h-56 md:h-64 object-cover rounded-t-xl lazy-img', loading: 'lazy' }),
+                      createElement('div', { className: 'absolute inset-0 bg-gradient-to-t from-[rgba(17,17,17,0.9)] to-transparent transition-opacity duration-300' }),
+                    ]
+                  ),
+                  createElement(
+                    'div',
+                    { className: 'p-4 sm:p-6' },
+                    [
+                      createElement('h3', { className: 'text-lg sm:text-xl md:text-2xl font-semibold text-[var(--neon-blue)] mb-2 line-clamp-2' }, event.title),
+                      createElement('p', { className: 'text-gray-300 flex items-center mb-1 text-sm sm:text-base' }, [
+                        createElement(CalendarIcon, { className: 'w-4 sm:w-5 h-4 sm:h-5 mr-2 text-[var(--neon-purple)]' }),
+                        `Date: ${event.date} ${event.time}`,
+                      ]),
+                      createElement('p', { className: 'text-gray-300 flex items-center mb-1 text-sm sm:text-base' }, [
+                        createElement(MapPinIcon, { className: 'w-4 sm:w-5 h-4 sm:h-5 mr-2 text-[var(--neon-purple)]' }),
+                        `City: ${event.city}`,
+                      ]),
+                      createElement('p', { className: 'text-gray-300 flex items-center mb-3 sm:mb-4 text-sm sm:text-base' }, [
+                        createElement(CurrencyDollarIcon, { className: 'w-4 sm:w-5 h-4 sm:h-5 mr-2 text-[var(--neon-purple)]' }),
+                        `Price: ${event.priceRange}`,
+                      ]),
+                      createElement(
+                        'div',
+                        { className: 'flex gap-2 flex-wrap' },
+                        [
+                          createElement(
+                            'a',
+                            { href: `#/event/${event.id}`, onClick: () => setPage(`/event/${event.id}`), className: 'button flex-1 text-center text-sm sm:text-base' },
+                            'View Details'
+                          ),
+                          createElement(
+                            'button',
+                            { className: 'button flex-1 text-center text-sm sm:text-base', onClick: () => handleAddToCart(event) },
+                            'Add to Cart'
+                          ),
+                          createElement(
+                            'button',
+                            { className: 'button flex-1 text-center text-sm sm:text-base', onClick: () => handleBuyNow(event) },
+                            'Buy Now'
+                          ),
+                          createElement(
+                            'button',
+                            { className: 'button flex-1 text-center text-sm sm:text-base flex items-center justify-center gap-2', onClick: () => handleShare(event.id) },
+                            [
+                              createElement(ShareIcon, { className: 'w-4 sm:w-5 h-4 sm:h-5' }),
+                              'Share',
+                            ]
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
+                ]
+              ))
+            )
+          ),
+        ]
+      );
+    };
+
+    // My Account Component
+    const MyAccount = ({ user, setPage, tickets, setUser }) => {
+      if (!user) {
+        setPage('/login');
+        return null;
+      }
+
+      const [editing, setEditing] = useState(false);
+      const [profile, setProfile] = useState({
+        name: user.name,
+        email: user.email || `${user.name}@example.com`,
+        phone: user.phone || '+380123456789',
+        address: user.address || 'Kyiv, Ukraine',
+      });
+      const [expandedTicket, setExpandedTicket] = useState(null);
+
+      const handleEditProfile = useCallback(() => {
+        if (editing) {
+          setUser({ ...user, ...profile });
+        }
+        setEditing(!editing);
+      }, [editing, profile, setUser]);
+
+      const handleDownloadTicket = useCallback((ticket) => {
+        const ticketData = `RV.RA-ICP Ticket\nEvent: ${ticket.title}\nDate: ${ticket.date} ${ticket.time}\nCity: ${ticket.city}\nVenue: ${ticket.venue}\nCategory: ${ticket.category}\nPrice: ${ticket.price} UAH\nQR Code: ${ticket.qrCode}`;
+        const blob = new Blob([ticketData], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${ticket.title}-ticket.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+      }, []);
+
+      return createElement(
+        'section',
+        { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+        createElement(
+          'div',
+          { className: 'max-w-4xl mx-auto scale-in' },
+          [
+            createElement('h2', { className: 'text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--neon-blue)]' }, 'My Account'),
+            // Profile Section
+            createElement(
+              'div',
+              { className: 'bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)] mb-8' },
+              [
+                createElement('h3', { className: 'text-xl font-semibold text-[var(--neon-blue)] mb-4' }, 'Profile Information'),
+                editing ? (
+                  createElement(
+                    'div',
+                    { className: 'space-y-4' },
+                    [
+                      createElement('input', {
+                        type: 'text',
+                        placeholder: 'Name',
+                        className: 'w-full p-3 bg-gray-700 text-white rounded-lg input-focus',
+                        value: profile.name,
+                        onChange: (e) => setProfile({ ...profile, name: e.target.value }),
+                      }),
+                      createElement('input', {
+                        type: 'email',
+                        placeholder: 'Email',
+                        className: 'w-full p-3 bg-gray-700 text-white rounded-lg input-focus',
+                        value: profile.email,
+                        onChange: (e) => setProfile({ ...profile, email: e.target.value }),
+                      }),
+                      createElement('input', {
+                        type: 'tel',
+                        placeholder: 'Phone',
+                        className: 'w-full p-3 bg-gray-700 text-white rounded-lg input-focus',
+                        value: profile.phone,
+                        onChange: (e) => setProfile({ ...profile, phone: e.target.value }),
+                      }),
+                      createElement('input', {
+                        type: 'text',
+                        placeholder: 'Address',
+                        className: 'w-full p-3 bg-gray-700 text-white rounded-lg input-focus',
+                        value: profile.address,
+                        onChange: (e) => setProfile({ ...profile, address: e.target.value }),
+                      }),
+                    ]
+                  )
+                ) : (
+                  createElement(
+                    'div',
+                    { className: 'space-y-2' },
+                    [
+                      createElement('p', { className: 'text-gray-300' }, `Name: ${profile.name}`),
+                      createElement('p', { className: 'text-gray-300' }, `Email: ${profile.email}`),
+                      createElement('p', { className: 'text-gray-300' }, `Phone: ${profile.phone}`),
+                      createElement('p', { className: 'text-gray-300' }, `Address: ${profile.address}`),
+                    ]
+                  )
+                ),
+                createElement(
+                  'button',
+                  { className: 'button mt-4', onClick: handleEditProfile },
+                  editing ? 'Save Profile' : 'Edit Profile'
+                ),
+              ]
+            ),
+            // Tickets Section
+            createElement(
+              'h3',
+              { className: 'text-xl font-semibold text-[var(--neon-blue)] mb-4' },
+              'My Tickets'
+            ),
+            tickets.length === 0 ? (
+              createElement('p', { className: 'text-gray-300 text-center' }, 'You have no purchased tickets.')
+            ) : (
+              createElement(
+                'div',
+                { className: 'space-y-4' },
+                tickets.map(ticket => createElement(
+                  'div',
+                  { key: ticket.id, className: 'bg-gray-800/40 p-4 rounded-lg border border-[rgba(0,240,255,0.2)]' },
+                  [
+                    createElement(
+                      'div',
+                      { className: 'flex justify-between items-center cursor-pointer', onClick: () => setExpandedTicket(expandedTicket === ticket.id ? null : ticket.id) },
+                      [
+                        createElement('h4', { className: 'text-lg font-semibold text-[var(--neon-blue)]' }, ticket.title),
+                        createElement('span', { className: 'text-gray-300' }, expandedTicket === ticket.id ? '▲' : '▼'),
+                      ]
+                    ),
+                    createElement(
+                      'div',
+                      { className: `collapsible ${expandedTicket === ticket.id ? 'open' : ''}` },
+                      [
+                        createElement('p', { className: 'text-gray-300 mb-1' }, `Date: ${ticket.date} ${ticket.time}`),
+                        createElement('p', { className: 'text-gray-300 mb-1' }, `City: ${ticket.city}`),
+                        createElement('p', { className: 'text-gray-300 mb-1' }, `Venue: ${ticket.venue}`),
+                        createElement('p', { className: 'text-gray-300 mb-1' }, `Category: ${ticket.category}`),
+                        createElement('p', { className: 'text-gray-300 mb-3' }, `Price: ${ticket.price} UAH`),
+                        createElement(
+                          'div',
+                          { className: 'flex justify-center mb-3' },
+                          createElement('canvas', { id: `qrcode-${ticket.id}` })
+                        ),
+                        createElement('script', {}, `
+                          const canvas = document.getElementById('qrcode-${ticket.id}');
+                          QRCode.toCanvas(canvas, '${ticket.qrCode}', { width: 150, color: { dark: '#00f0ff', light: '#1a1a2e' } }, function (error) {
+                            if (error) console.error(error);
+                          });
+                        `),
+                        createElement(
+                          'button',
+                          { className: 'button w-full', onClick: () => handleDownloadTicket(ticket) },
+                          'Download Ticket'
+                        ),
+                      ]
+                    ),
+                  ]
+                ))
+              )
+            ),
+            createElement(
+              'a',
+              { href: '#/events', onClick: () => setPage('/events'), className: 'button inline-block mt-4' },
+              'Browse Events'
+            ),
+          ]
+        )
+      );
+    };
+
+    // Login Component
+    const Login = ({ setUser, setPage }) => {
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
+      const [error, setError] = useState('');
+
+      const handleLogin = useCallback(() => {
+        if (!email || !password) {
+          setError('Please fill in all fields.');
+          return;
+        }
+        if (!/\S+@\S+\.\S+/.test(email)) {
+          setError('Invalid email format.');
+          return;
+        }
+        setUser({ name: email.split('@')[0], email });
+        setPage('/');
+        setError('');
+      }, [email, password, setUser, setPage]);
+
+      const handlePlugWalletLogin = () => {
+        alert('Plug Wallet login is not fully implemented in this static version. Please integrate @psychedelic/plug-connect for full functionality.');
+      };
+
+      return createElement(
+        'section',
+        { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+        createElement(
+          'div',
+          { className: 'max-w-md mx-auto bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)] scale-in' },
+          [
+            createElement('h2', { className: 'text-2xl font-bold text-center mb-6 text-[var(--neon-blue)]' }, 'Login'),
+            error && createElement('p', { className: 'text-red-400 text-center mb-4' }, error),
+            createElement('input', {
+              type: 'email',
+              placeholder: 'Email',
+              className: 'w-full p-3 mb-4 bg-gray-700 text-white rounded-lg input-focus',
+              value: email,
+              onChange: (e) => setEmail(e.target.value),
+            }),
+            createElement('input', {
+              type: 'password',
+              placeholder: 'Password',
+              className: 'w-full p-3 mb-4 bg-gray-700 text-white rounded-lg input-focus',
+              value: password,
+              onChange: (e) => setPassword(e.target.value),
+            }),
+            createElement(
+              'button',
+              { className: 'button w-full mb-4', onClick: handleLogin },
+              'Login'
+            ),
+            createElement(
+              'button',
+              { className: 'button w-full flex items-center justify-center gap-2', onClick: handlePlugWalletLogin },
+              [
+                createElement(WalletIcon, { className: 'w-5 h-5' }),
+                'Sign in with Plug Wallet',
+              ]
+            ),
+            createElement(
+              'p',
+              { className: 'text-center text-gray-300 mt-4' },
+              [
+                'No account? ',
+                createElement('a', { href: '#/register', onClick: () => setPage('/register'), className: 'text-[var(--neon-blue)] hover:underline' }, 'Register'),
+              ]
+            ),
+          ]
+        )
+      );
+    };
+
+    // Register Component
+    const Register = ({ setUser, setPage }) => {
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
+      const [name, setName] = useState('');
+      const [phone, setPhone] = useState('');
+      const [address, setAddress] = useState('');
+      const [error, setError] = useState('');
+
+      const handleRegister = useCallback(() => {
+        if (!email || !password || !name || !phone || !address) {
+          setError('Please fill in all fields.');
+          return;
+        }
+        if (!/\S+@\S+\.\S+/.test(email)) {
+          setError('Invalid email format.');
+          return;
+        }
+        if (password.length < 6) {
+          setError('Password must be at least 6 characters.');
+          return;
+        }
+        setUser({ name, email, phone, address });
+        setPage('/');
+        setError('');
+      }, [email, password, name, phone, address, setUser, setPage]);
+
+      const handlePlugWalletRegister = () => {
+        alert('Plug Wallet registration is not fully implemented in this static version. Please integrate @psychedelic/plug-connect for full functionality.');
+      };
+
+      return createElement(
+        'section',
+        { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+        createElement(
+          'div',
+          { className: 'max-w-md mx-auto bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)] scale-in' },
+          [
+            createElement('h2', { className: 'text-2xl font-bold text-center mb-6 text-[var(--neon-blue)]' }, 'Register'),
+            error && createElement('p', { className: 'text-red-400 text-center mb-4' }, error),
+            createElement('input', {
+              type: 'text',
+              placeholder: 'Name',
+              className: 'w-full p-3 mb-4 bg-gray-700 text-white rounded-lg input-focus',
+              value: name,
+              onChange: (e) => setName(e.target.value),
+            }),
+            createElement('input', {
+              type: 'email',
+              placeholder: 'Email',
+              className: 'w-full p-3 mb-4 bg-gray-700 text-white rounded-lg input-focus',
+              value: email,
+              onChange: (e) => setEmail(e.target.value),
+            }),
+            createElement('input', {
+              type: 'password',
+              placeholder: 'Password',
+              className: 'w-full p-3 mb-4 bg-gray-700 text-white rounded-lg input-focus',
+              value: password,
+              onChange: (e) => setPassword(e.target.value),
+            }),
+            createElement('input', {
+              type: 'tel',
+              placeholder: 'Phone',
+              className: 'w-full p-3 mb-4 bg-gray-700 text-white rounded-lg input-focus',
+              value: phone,
+              onChange: (e) => setPhone(e.target.value),
+            }),
+            createElement('input', {
+              type: 'text',
+              placeholder: 'Address',
+              className: 'w-full p-3 mb-4 bg-gray-700 text-white rounded-lg input-focus',
+              value: address,
+              onChange: (e) => setAddress(e.target.value),
+            }),
+            createElement(
+              'button',
+              { className: 'button w-full mb-4', onClick: handleRegister },
+              'Register'
+            ),
+            createElement(
+              'button',
+              { className: 'button w-full flex items-center justify-center gap-2', onClick: handlePlugWalletRegister },
+              [
+                createElement(WalletIcon, { className: 'w-5 h-5' }),
+                'Register with Plug Wallet',
+              ]
+            ),
+            createElement(
+              'p',
+              { className: 'text-center text-gray-300 mt-4' },
+              [
+                'Already have an account? ',
+                createElement('a', { href: '#/login', onClick: () => setPage('/login'), className: 'text-[var(--neon-blue)] hover:underline' }, 'Login'),
+              ]
+            ),
+          ]
+        )
+      );
+    };
+
+    // Cart Component
+    const Cart = ({ cart, setCart, setPage, user, setShowAuthModal, setTickets }) => {
+      if (!user) {
+        setShowAuthModal(true);
+        setPage('/login');
+        return null;
+      }
+
+      const updateQuantity = useCallback((id, delta) => {
+        setCart(prev => prev.map(item => 
+          item.id === id ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item
+        ));
+      }, [setCart]);
+
+      const removeItem = useCallback((id) => {
+        setCart(prev => prev.filter(item => item.id !== id));
+      }, [setCart]);
+
+      const handleCheckout = useCallback(() => {
+        setTickets(prev => [
+          ...prev,
+          ...cart.map(item => {
+            const event = events.find(e => e.id === item.id);
+            return {
+              id: `${item.id}-${Date.now()}`,
+              eventId: item.id,
+              title: item.title,
+              date: event.date,
+              time: event.time,
+              city: event.city,
+              venue: event.venue,
+              category: event.category,
+              price: item.price,
+              qrCode: `ticket-${item.id}-${Date.now()}`,
+            };
+          })
+        ]);
+        setCart([]);
+        alert('Checkout successful! Tickets added to My Account and sent to your Telegram (@TP_TicketsPartner_bot) as a QR code.');
+      }, [cart, setTickets, setCart]);
+
+      const total = useMemo(() => cart.reduce((sum, item) => sum + item.price * item.quantity, 0), [cart]);
+
+      return createElement(
+        'section',
+        { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+        createElement(
+          'div',
+          { className: 'max-w-4xl mx-auto scale-in' },
+          [
+            createElement('h2', { className: 'text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--neon-blue)]' }, 'Your Cart'),
+            cart.length === 0 ? (
+              createElement('p', { className: 'text-gray-300 text-center' }, 'Your cart is empty.')
+            ) : (
+              createElement(
+                'div',
+                { className: 'space-y-4' },
+                [
+                  ...cart.map(item => createElement(
+                    'div',
+                    { key: item.id, className: 'flex flex-col sm:flex-row justify-between items-center bg-gray-800/40 p-4 rounded-lg border border-[rgba(0,240,255,0.2)]' },
+                    [
+                      createElement('span', { className: 'text-gray-300 font-medium mb-2 sm:mb-0' }, item.title),
+                      createElement('div', { className: 'flex items-center gap-3' }, [
+                        createElement('button', { className: 'button px-4 py-2', onClick: () => updateQuantity(item.id, -1) }, '-'),
+                        createElement('span', { className: 'text-gray-300 font-medium' }, item.quantity),
+                        createElement('button', { className: 'button px-4 py-2', onClick: () => updateQuantity(item.id, 1) }, '+'),
+                      ]),
+                      createElement('span', { className: 'text-gray-300 font-medium mb-2 sm:mb-0' }, `${item.price * item.quantity} UAH`),
+                      createElement(
+                        'button',
+                        { className: 'button bg-red-500 hover:bg-red-600 px-4 py-2', onClick: () => removeItem(item.id) },
+                        'Remove'
+                      ),
+                    ]
+                  )),
+                  createElement('p', { className: 'text-gray-300 font-semibold text-right' }, `Total: ${total} UAH`),
+                  createElement(
+                    'button',
+                    { className: 'button w-full mt-4', onClick: handleCheckout },
+                    'Checkout'
+                  ),
+                ]
+              )
+            ),
+            createElement(
+              'a',
+              { href: '#/events', onClick: () => setPage('/events'), className: 'button inline-block mt-4' },
+              'Continue Shopping'
+            ),
+          ]
+        )
+      );
+    };
+
+    // About Us Component
+  const AboutUs = ({ setPage }) => {
+    return createElement(
+      'section',
+      { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+      createElement(
+        'div',
+        { className: 'max-w-4xl mx-auto scale-in' },
+        [
+          createElement('h2', { className: 'text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--neon-blue)]' }, 'About Us'),
+          createElement(
+            'div',
+            { className: 'bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)]' },
+            [
+              createElement('p', { className: 'text-gray-300 mb-4' }, 'RV.RA-ICP (Tickets Partner) is a decentralized platform for creating events and selling tickets. Our services are available through the Telegram web application, which provides fast and convenient use without installation. Today we have created a website that expands our capabilities and in the future we plan to expand the capabilities of iOS, Android.'),
+              createElement('p', { className: 'text-gray-300 mb-4' }, 'Founded in 2025, our mission is to connect event-goers with unforgettable experiences while ensuring trust and transparency in every transaction. We partner with top venues and organizers to bring you a diverse range of events, from local comedy shows to international music festivals.'),
+              createElement('p', { className: 'text-gray-300 mb-4' }, 'RV.RA-ICP offers a secure, convenient ticket purchasing solution using ICP blockchain for transparency and decentralized storage. With Internet Identity and NFT tickets, each ticket is unique and fraud-proof. QR code entry ensures ease of use. Whether you love music, theater, or festivals, RV.RA-ICP delivers unforgettable experiences with cutting-edge technology..'),
+              createElement('p', { className: 'text-gray-300' }, 'Join thousands of satisfied customers and explore the world of events with RV.RA-ICP today!'),
+            ]
+          ),
+          createElement(
+            'a',
+            { href: '#/events', onClick: () => setPage('/events'), className: 'button inline-block mt-4' },
+            'Browse Events'
+          ),
+        ]
+      )
+    );
+  };
+
+  // Payment Methods Component
+  const PaymentMethods = ({ setPage }) => {
+    return createElement(
+      'section',
+      { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+      createElement(
+        'div',
+        { className: 'max-w-4xl mx-auto scale-in' },
+        [
+          createElement('h2', { className: 'text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--neon-blue)]' }, 'Payment Methods'),
+          createElement(
+            'div',
+            { className: 'bg-gray-800/40 p-6 rounded-lg border border-[rgba(0,240,255,0.2)]' },
+            [
+              createElement('h3', { className: 'text-xl font-semibold text-[var(--neon-blue)] mb-4' }, 'Secure Payment Options'),
+              createElement('p', { className: 'text-gray-300 mb-4' }, 'At RV.RA-ICP, we offer a variety of secure payment methods to make your ticket purchasing experience safe and convenient:'),
+              createElement(
+                'ul',
+                { className: 'text-gray-300 list-disc list-inside space-y-2 mb-4' },
+                [
+                  createElement('li', {}, 'Credit/Debit Cards (Visa, MasterCard)'),
+                  createElement('li', {}, 'Plug Wallet (Blockchain-based secure payments with cryptocurrency)'),
+                  createElement('li', {}, 'PayPal for quick and trusted transactions'),
+                  createElement('li', {}, 'Bank Transfers for select events'),
+                  createElement('li', {}, 'NOWPayments')
+                ]
+              ),
+              createElement('p', { className: 'text-gray-300 mb-4' }, 'All transactions and user data are securely encrypted and stored on the blockchain, ensuring a high level of protection for your personal and financial information. Using Plug Wallet for payment provides additional security and transparency thanks to decentralized technology..'),
+              createElement('p', { className: 'text-gray-300' }, 'Any questions? Contact us at citointrues@gmail.com, phone: +380934307551, Address: Ukraine, 03022, Kiev, st. Zdanovskaya Yulia, booth 49, building 10, apartment 306 or ours via Telegram bot @TP_TicketsPartner_bot.'),
+            ]
+          ),
+          createElement(
+            'a',
+            { href: '#/events', onClick: () => setPage('/events'), className: 'button inline-block mt-4' },
+            'Browse Events'
+          ),
+        ]
+      )
+    );
+  };
+
+  // Auth Modal Component
+  const AuthModal = ({ show, setShow, setPage }) => {
+    if (!show) return null;
+    return createElement(
+      'div',
+      { className: 'fixed inset-0 modal flex items-center justify-center z-50' },
+      createElement(
+        'div',
+        { className: 'bg-gray-800/90 p-6 sm:p-8 rounded-lg border border-[rgba(0,240,255,0.2)] max-w-sm w-full scale-in' },
+        [
+          createElement('h3', { className: 'text-xl sm:text-2xl font-bold text-[var(--neon-blue)] mb-4' }, 'Please Log In'),
+          createElement('p', { className: 'text-gray-300 mb-6' }, 'You need to be logged in to perform this action.'),
+          createElement(
+            'div',
+            { className: 'flex gap-4' },
+            [
+              createElement(
+                'button',
+                { className: 'button flex-1', onClick: () => { setShow(false); setPage('/login'); } },
+                'Log In'
+              ),
+              createElement(
+                'button',
+                { className: 'button flex-1', onClick: () => setShow(false) },
+                'Cancel'
+              ),
+            ]
+          ),
+        ]
+      )
+    );
+  };
+
+  // Footer Component
+  const Footer = () => {
+    return createElement(
+      'footer',
+      { className: 'bg-gray-900/90 py-8 sm:py-12 px-4 sm:px-6 md:px-8' },
+      createElement(
+        'div',
+        { className: 'max-w-7xl mx-auto' },
+        [
+          createElement(
+            'div',
+            { className: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8' },
+            [
+              createElement(
+                'div',
+                {},
+                [
+                  createElement('h3', { className: 'text-lg font-semibold text-[var(--neon-blue)] mb-4' }, 'RV.RA-ICP'),
+                  createElement('p', { className: 'text-gray-400 text-sm' }, 'Your trusted platform for booking tickets to concerts, theaters, and festivals.'),
+                ]
+              ),
+              createElement(
+                'div',
+                {},
+                [
+                  createElement('h3', { className: 'text-lg font-semibold text-[var(--neon-blue)] mb-4' }, 'Quick Links'),
+                  createElement(
+                    'ul',
+                    { className: 'space-y-2' },
+                    [
+                      createElement('li', {}, createElement('a', { href: '#/', className: 'footer-link' }, 'Home')),
+                      createElement('li', {}, createElement('a', { href: '#/events', className: 'footer-link' }, 'Events')),
+                      createElement('li', {}, createElement('a', { href: '#/about', className: 'footer-link' }, 'About Us')),
+                      createElement('li', {}, createElement('a', { href: '#/payment-methods', className: 'footer-link' }, 'Payment Methods')),
+                    ]
+                  ),
+                ]
+              ),
+              createElement(
+                'div',
+                {},
+                [
+                  createElement('h3', { className: 'text-lg font-semibold text-[var(--neon-blue)] mb-4' }, 'Contact Us'),
+                  createElement('p', { className: 'text-gray-400 text-sm mb-2' }, 'Email: citointrues@gmail.com'),
+                  createElement('p', { className: 'text-gray-400 text-sm mb-2' }, 'Telegram: @TP_TicketsPartner_bot'),
+                  createElement('p', { className: 'text-gray-400 text-sm' }, 'Phone: +380934307551'),
+                  
+                  createElement('p', { className: 'text-gray-400 text-sm' }, 'Address: Ukraine, 03022, Kyiv city, Zdanovska Yuliya St., building 49, building 10, apartment 306')
+                ]
+              ),
+              createElement(
+                'div',
+                {},
+                [
+                  createElement('h3', { className: 'text-lg font-semibold text-[var(--neon-blue)] mb-4' }, 'Payment Methods'),
+                  createElement(
+                    'ul',
+                    { className: 'space-y-2' },
+                    [
+                      createElement('li', { className: 'text-gray-400 text-sm' }, 'Visa / MasterCard'),
+                      createElement('li', { className: 'text-gray-400 text-sm' }, 'Plug Wallet (Crypto)'),
+                      createElement('li', { className: 'text-gray-400 text-sm' }, 'PayPal'),
+                      createElement('li', { className: 'text-gray-400 text-sm' }, 'Bank Transfer'),
+                    ]
+                  ),
+                ]
+              ),
+            ]
+          ),
+          createElement('p', { className: 'text-gray-400 text-center mt-8 text-sm' }, '© 2025 RV.RA-ICP. All rights reserved.'),
+        ]
+      )
+    );
+  };
+
+  // Main App Component
+  const App = () => {
+    const [page, setPage] = useState(window.location.hash.slice(1) || '/');
+    const [user, setUser] = useState(null);
+    const [cart, setCart] = useState([]);
+    const [tickets, setTickets] = useState([]);
+    const [showAuthModal, setShowAuthModal] = useState(false);
+
+    useEffect(() => {
+      const handleHashChange = () => {
+        setPage(window.location.hash.slice(1) || '/');
+      };
+      window.addEventListener('hashchange', handleHashChange);
+      return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
+
+    const renderContent = () => {
+      if (page.startsWith('/event/')) {
+        const eventId = page.split('/')[2];
+        return createElement(EventDetails, { eventId, user, setCart, setShowAuthModal, setTickets, setPage });
+      }
+      switch (page) {
+        case '/events':
+          return createElement(Events, { cart, setCart, user, setShowAuthModal, setTickets });
+        case '/login':
+          return createElement(Login, { setUser, setPage });
+        case '/register':
+          return createElement(Register, { setUser, setPage });
+        case '/cart':
+          return createElement(Cart, { cart, setCart, setPage, user, setShowAuthModal, setTickets });
+        case '/account':
+          return createElement(MyAccount, { user, setPage, tickets, setUser });
+        case '/about':
+          return createElement(AboutUs, { setPage });
+        case '/payment-methods':
+          return createElement(PaymentMethods, { setPage });
+        default:
+          return createElement(Hero, { user, setCart, setPage, setShowAuthModal, setTickets });
+      }
+    };
+
+    return createElement(
+      'div',
+      { className: 'min-h-screen flex flex-col' },
+      [
+        createElement(Navbar, { user, setUser, cart, setPage, tickets }),
+        createElement('main', { className: 'flex-grow' }, renderContent()),
+        createElement(AuthModal, { show: showAuthModal, setShow: setShowAuthModal, setPage }),
+        createElement(Footer, {}),
+      ]
+    );
+  };
+
+  // Render App
+  ReactDOM.render(createElement(App), document.getElementById('app'));
+</script>
+</body>
+</html>
