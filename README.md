@@ -1,207 +1,204 @@
-TP Tickets Partner (RV.RA-ICP)
+Tickets Partner 🎫
+Tickets Partner (also known as RV.RA-ICP) is a modern, decentralized ticket booking platform that seamlessly integrates with Telegram for effortless event discovery and purchasing. Built on the Internet Computer Protocol (ICP), our platform leverages blockchain technology for secure, transparent, and tamper-proof ticketing. Users can purchase tickets for events using cryptocurrencies (including ICP via Plug Wallet), traditional payment methods, or other supported options—all within a unified ecosystem.
+As participants in the ICP WCHL25 Hackathon (Qualification Round) on DoraHacks , we're transforming our initial landing page into a fully functional, ICP-hosted website. This evolution incorporates Plug Wallet for seamless ICP payments, Internet Identity (II) for secure authentication, and AI-powered features via coffee.ai to enhance user experience and event recommendations. Our goal is to create a scalable, decentralized ticketing solution that empowers event organizers, protects users from fraud, and fosters a vibrant Web3 community.
+🌟 Features
+For Users
+
+Decentralized Ticket Purchasing: Buy tickets securely using ICP via Plug Wallet, with NFT-based tickets stored on the blockchain for verifiable ownership and anti-counterfeiting.
+Internet Identity (II) Integration: Passwordless, secure login using biometric or hardware-based authentication for enhanced privacy and user control.
+Telegram Bot Integration: Discover, browse, and purchase tickets directly within Telegram for a frictionless experience.
+Multiple Payment Methods: Support for ICP (via Plug Wallet), USDT, BTC, SOL, and traditional banking options.
+QR Code & NFT Tickets: Receive digital tickets as QR codes or NFTs for easy check-in and secondary market trading.
+AI-Powered Recommendations: Leveraging coffee.ai for personalized event suggestions based on user preferences, past purchases, and real-time trends.
+Referral System: Earn ICP rewards or discounts by referring friends.
+Event Discovery: Browse, search, and filter events with real-time notifications.
+Cross-Platform Access: Seamless experience across web, Telegram mini-app, and upcoming iOS/Android apps.
+
+For Event Organizers
+
+Decentralized Event Creation: Create and manage events on ICP canisters for immutable records and global accessibility.
+Multiple Ticket Types: Define pricing tiers, capacities, and NFT-based exclusives.
+Promotional Tools: Generate discount codes, free tickets, and ICP-based referral links.
+Real-Time Analytics: Track sales, attendance, and engagement with blockchain-verified data.
+AI Insights: Use coffee.ai to optimize event promotion and predict attendance.
+
+For Administrators
+
+Event Moderation: Approve or reject events with decentralized governance tools.
+Payment Management: Handle confirmations for ICP and traditional payments.
+User Analytics: Access comprehensive, privacy-preserving statistics.
+Notification System: Broadcast updates via Telegram or in-app alerts.
+
+🚀 Technology Stack
+Blockchain & Decentralization
+
+Internet Computer Protocol (ICP): Hosts the full website and backend logic in canisters for high scalability, low costs, and true decentralization.
+Plug Wallet: Enables seamless ICP payments and wallet integration.
+Internet Identity (II): Provides secure, decentralized authentication.
+NFT Standards: For unique, verifiable tickets on the ICP blockchain.
+
+Frontend
+
+React 18 with JSX (embedded in static HTML for ICP canister deployment).
+Tailwind CSS for responsive, modern styling.
+Framer Motion for smooth animations.
+React Slick for carousels.
+Heroicons for icons.
+React Router DOM for navigation (simulated in static setup).
+
+Backend & Integrations
+
+ICP Canisters: Handle core logic, data storage, and smart contracts for events and tickets.
+Node.js with Express.js (transitional; migrating to full ICP).
+Firebase Firestore (transitional database; integrating with ICP for full decentralization).
+Telegram Bot API for bot integration.
+NOWPayments API for multi-crypto payments (USDT, BTC, ETH, SOL, LTC).
+Monobank API for traditional Ukrainian banking.
+coffee.ai: AI engine for event recommendations, personalization, and analytics.
+
+Payment Processing
+
+Plug Wallet & ICP: Native cryptocurrency payments with low fees and instant settlement.
+NOWPayments: Support for additional cryptos.
+Monobank: Fiat integration for Ukrainian users.
+Manual Verification: PDF uploads for custom payments (with blockchain verification).
+
+Demonstration Site
+A live demonstration of our fully functional website is hosted on an ICP canister. Access it via the index.html deployed on ICP for a preview of our decentralized frontend. This demo showcases event browsing, cart functionality, Plug Wallet integration, and AI-driven features. View Demo (replace with actual canister URL post-deployment).
+📁 Project Structure
+text├── src/
+│   ├── components/
+│   │   ├── Admin.jsx          # Admin dashboard
+│   │   ├── Events.jsx         # Event browsing and creation
+│   │   ├── Home.jsx           # Main dashboard
+│   │   ├── Landing.jsx        # Evolved into full ICP-based site
+│   │   ├── Partners.jsx       # Referral system
+│   │   └── Tickets.jsx        # User tickets
+│   ├── App.jsx                # Main application router
+│   ├── firebase.js            # Firebase configuration (transitional)
+│   ├── main.jsx               # React entry point
+│   └── styles.css             # Global styles
+├── server.js                  # Express server (transitional)
+├── serviceAccountKey.json     # Firebase admin credentials (transitional)
+├── index.html                 # ICP-hosted demo site with embedded React
+└── package.json               # Dependencies
+🛠️ Installation & Setup
+Prerequisites
+
+Node.js 16+
+ICP SDK (dfx) for canister deployment
+Plug Wallet for testing ICP payments
+Firebase project (transitional)
+Telegram Bot Token
+NOWPayments API key (optional)
+Monobank API key (optional)
+coffee.ai API key for AI features
+
+Environment Variables
+Create a .env file with:
+envTELEGRAM_BOT_TOKEN=your_bot_token
+WEB_APP_URL=your_icp_canister_url
+NOWPAYMENTS_API_KEY=your_nowpayments_key
+NOWPAYMENTS_IPN_SECRET=your_ipn_secret
+MONOBANK_API_KEY=your_monobank_key
+FIREBASE_API_KEY=your_firebase_api_key
+FIREBASE_PROJECT_ID=your_project_id
+COFFEE_AI_API_KEY=your_coffee_ai_key
+ICP_CANISTER_ID=your_canister_id
+Running Locally
 
-Overview
+Install dependencies:
+bashnpm install
 
-TP Tickets Partner, branded as RV.RA-ICP, is a decentralized platform for creating events and selling tickets, leveraging the Internet Computer Protocol (ICP) blockchain for secure, transparent, and fraud-proof transactions. The platform allows users to purchase tickets for concerts, theaters, sports, festivals, and other events, primarily in Kyiv, Ukraine, with plans for broader expansion. Tickets are issued as NFTs, ensuring uniqueness and authenticity, and are accessible via QR codes for seamless entry. The platform supports a Telegram web application (@TP_TicketsPartner_bot) for convenient access without installation and has now expanded to a fully functional website.
+Start development server:
+bashnpm run dev
 
-Features
+Deploy to ICP:
 
+Install dfx: sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
+Deploy canister: dfx deploy
+Host index.html and assets on the canister.
 
 
 
+Production
+Deploy the full site to an ICP canister for decentralized hosting. Use Plug Wallet for testing ICP/II integrations.
+🔧 Configuration
+ICP & Plug Wallet Setup
 
-Event Discovery: Browse a wide range of events, including concerts, theater shows, festivals, conferences, and more, with filters for categories, dates, and locations.
+Set up an ICP developer account and create a canister.
+Integrate Plug Wallet using the @psychedelic/plug-connect library.
+Enable II for authentication in the frontend.
 
+AI Integration (coffee.ai)
 
+Obtain API keys from coffee.ai.
+Implement endpoints for personalized recommendations in ICP canisters.
 
-Secure Payments: Multiple payment options, including Visa/MasterCard, PayPal, Bank Transfers, NOWPayments, and Plug Wallet for cryptocurrency transactions, all secured by blockchain technology.
+Telegram Bot Setup
 
+Create bot via @BotFather.
+Set webhook to your ICP-hosted URL.
+Configure Web App URL in bot settings.
 
+📱 Usage
+For Users
 
-NFT Tickets: Each ticket is a unique NFT stored on the ICP blockchain, ensuring transparency and preventing fraud.
+Start the bot: @TP_TicketsPartner_bot
+Browse events, select tickets, and pay via Plug Wallet (ICP) or other methods.
+Receive NFT/QR code tickets in Telegram or the web app.
 
+For Event Organizers & Admins
+Access via web app or bot for creation, moderation, and analytics.
+🔐 Security Features
 
+Blockchain Verification: ICP ensures immutable tickets and payments.
+II Authentication: Decentralized, secure logins.
+NFT Tickets: Prevent fraud with unique, on-chain assets.
+Encryption: All data encrypted; payments via secure gateways.
 
-QR Code Entry: Tickets are delivered with QR codes, accessible via the Telegram bot or downloadable from the website, for easy event entry.
+🌍 Internationalization
 
+Ukrainian (primary)
+English (full support)
 
+📊 Analytics & Monitoring
 
-User Accounts: Manage profiles, view purchased tickets, and download tickets with QR codes from the "My Account" section.
+Blockchain-based tracking for sales and engagement.
+AI-driven insights via coffee.ai.
 
+🚀 Deployment
+On ICP
 
+Use dfx to deploy canisters.
+Host static assets (index.html) on the asset canister.
+Integrate with Telegram for hybrid web/bot experience.
 
-Cart System: Add multiple tickets to a cart for a streamlined checkout process.
+Production Considerations
 
+SSL via ICP's built-in support.
+Rate limiting and monitoring.
+Regular canister upgrades.
 
+🤝 Contributing
 
-Responsive Design: The website is optimized for mobile, tablet, and desktop devices, featuring a modern, neon-themed UI with Tailwind CSS and React.
+Fork the repo.
+Create a feature branch.
+Submit a PR with tests.
 
+📄 License
+Proprietary. All rights reserved.
+📞 Support
 
-
-Decentralized Technology: Built on the ICP blockchain with Internet Identity for secure user authentication and Plug Wallet integration for crypto payments.
-
-Installation
-
-To run the TP Tickets Partner website locally, follow these steps:
-
-
-
-
-
-Clone the Repository:
-
-git clone https://github.com/your-username/tp-tickets-partner.git
-cd tp-tickets-partner
-
-
-
-Serve the Website: Since the website is a static single-page application, you can serve it using any static file server. For example, using http-server:
-
-npm install -g http-server
-http-server .
-
-Alternatively, you can open index.html directly in a browser for basic functionality, but a server is recommended for proper asset loading.
-
-
-
-Dependencies: The website uses the following external libraries, loaded via CDN:
-
-
-
-
-
-React and ReactDOM: https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js
-
-
-
-QRCode.js: https://cdn.jsdelivr.net/npm/qrcode.react@3.1.0/lib/qrcode.min.js
-
-
-
-Tailwind CSS: https://cdn.tailwindcss.com
-
-
-
-Google Fonts (Poppins): https://fonts.googleapis.com/css2?family=Poppins
-
-No additional installation is required for these dependencies as they are loaded at runtime.
-
-Usage
-
-
-
-
-
-Access the Website: Open the website in a browser or deploy it to a hosting service (e.g., Netlify, Vercel, or ICP canister for decentralized hosting).
-
-
-
-Navigation:
-
-
-
-
-
-Home: View featured events, top categories, and search for events.
-
-
-
-Events: Browse all events with filters for category, date, and search by title or city.
-
-
-
-About Us: Learn about the platform’s mission and technology.
-
-
-
-Payment Methods: View supported payment options.
-
-
-
-My Account: Manage profile information and view purchased tickets (requires login).
-
-
-
-Cart: Add tickets to the cart and proceed to checkout.
-
-
-
-Login/Register: Create an account or log in using email or Plug Wallet (note: Plug Wallet integration requires additional setup with @psychedelic/plug-connect).
-
-
-
-Purchasing Tickets:
-
-
-
-
-
-Select an event and choose "Add to Cart" or "Buy Now."
-
-
-
-"Buy Now" instantly adds the ticket to your account with a QR code.
-
-
-
-Cart items can be checked out in bulk, with tickets added to "My Account" and sent to the Telegram bot (@TP_TicketsPartner_bot).
-
-
-
-Tickets can be downloaded as text files containing event details and QR codes.
-
-
-
-Telegram Integration: Use the Telegram bot (@TP_TicketsPartner_bot) to receive QR codes for purchased tickets and access the web app directly.
-
-File Structure
-
-
-
-
-
-index.html: The main HTML file containing the React-based single-page application with Tailwind CSS styling and JavaScript logic for event browsing, user authentication, cart management, and ticket purchasing.
-
-
-
-README.md: This file, providing an overview and instructions for the project.
-
-Future Plans
-
-
-
-
-
-Mobile Apps: Develop iOS and Android applications to enhance accessibility.
-
-
-
-Expanded Event Coverage: Include more cities and event types beyond Kyiv.
-
-
-
-Advanced Blockchain Integration: Fully implement Plug Wallet and Internet Identity for seamless decentralized authentication and payments.
-
-
-
-Multilingual Support: Add support for additional languages to cater to a global audience.
-
-Contact
-
-
-
-
-
+Telegram: @TicketsPartners
+Bot: @TP_TicketsPartner_bot
 Email: citointrues@gmail.com
+Location: Kyiv, Ukraine
+
+🔄 Version History
+
+v1.0.0: Initial release.
+Current: ICP-integrated with Plug Wallet, II, and AI features.
 
 
-
-Telegram: @TP_TicketsPartner_bot
-
-
-
-Phone: +380934307551
-
-
-
-Address: Ukraine, 03022, Kyiv city, Zdanovska Yuliya St., building 49, building 10, apartment 306
+This project is submitted to the ICP WCHL25 Hackathon, showcasing how decentralized technologies like ICP, II, and Plug Wallet can revolutionize ticketing—making it secure, accessible, and innovative. We're excited to build a full ecosystem, including upcoming iOS/Android apps, to drive Web3 adoption in events!
