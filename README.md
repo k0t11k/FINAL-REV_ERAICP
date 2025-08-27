@@ -1,4 +1,4 @@
-Tickets Partner 🎫
+Tickets Partner (RV.RA-ICP) 🎫
 Tickets Partner (also known as RV.RA-ICP) is a modern, decentralized ticket booking platform that seamlessly integrates with Telegram for effortless event discovery and purchasing. Built on the Internet Computer Protocol (ICP), our platform leverages blockchain technology for secure, transparent, and tamper-proof ticketing. Users can purchase tickets for events using cryptocurrencies (including ICP via Plug Wallet), traditional payment methods, or other supported options—all within a unified ecosystem.
 As participants in the ICP WCHL25 Hackathon (Qualification Round) on DoraHacks , we're transforming our initial landing page into a fully functional, ICP-hosted website. This evolution incorporates Plug Wallet for seamless ICP payments, Internet Identity (II) for secure authentication, and AI-powered features via coffee.ai to enhance user experience and event recommendations. Our goal is to create a scalable, decentralized ticketing solution that empowers event organizers, protects users from fraud, and fosters a vibrant Web3 community.
 🌟 Features
